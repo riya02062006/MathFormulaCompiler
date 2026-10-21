@@ -1,0 +1,44 @@
+
+CONTEXT-FREE GRAMMAR (CFG)
+==========================
+
+E -> E + T | E - T | T
+T -> T * P | T / P | P
+P -> P ^ U | U
+U -> +U | -U | A
+A -> ID | NUMBER | (E) | sqrt(E) | pow(E,E)
+
+
+GRAMMAR AFTER ELIMINATING LEFT RECURSION
+========================================
+
+E  -> T E'
+E' -> + T E' | - T E' | epsilon
+
+T  -> P T'
+T' -> * P T' | / P T' | epsilon
+
+P  -> U P'
+P' -> ^ P | epsilon
+
+U  -> + U | - U | A
+
+A  -> ID | NUMBER | (E) | sqrt(E) | pow(E,E)
+
+
+TERMINAL SYMBOLS
+================
+
+ID      : Variable name
+NUMBER  : Numeric constant
++       : Addition
+-       : Subtraction
+*       : Multiplication
+/       : Division
+^       : Exponentiation
+sqrt    : Square-root function
+pow     : Power function
+( )     : Parentheses
+,       : Argument separator
+
+epsilon : Empty production
