@@ -145,14 +145,13 @@ Additional documents, reports, presentation slides, and screenshots can be maint
 
 The project is divided among six members. The following table describes the planned responsibilities and the files or resources associated with each contribution.
 
-|  Member  |             Responsibility                 | Files or Resources |
 
-| Member 1 | Project report and technical documentation | `README.md`, project report |
-| Member 2 | Parser integration and semantic validation | `parser.py`, `semantic.py` |
-| Member 3 | Lexical analysis and token specification   | `lexer.py`, token documentation |
-| Member 4 | Testing and output screenshots             | `tests/valid_tests.txt`, `tests/invalid_tests.txt`, `compiler_output.png` |
-| Member 5 | Parse tree and Abstract Syntax Tree        | `ast_nodes.py`, `ast_printer.py`, AST documentation |
-| Member 6 | Presentation and project explanation       | Presentation slides and supporting documentation |
+1. Member 1 : `README.md`, project report. 
+2. Member 2 : `parser.py`, `semantic.py` .
+3. Member 3 : `lexer.py`, token documentation.
+4. Member 4 : `tests/valid_tests.txt`, `tests/invalid_tests.txt`, `compiler_output.png` , Testing and output screenshots.
+5. Member 5 : `ast_nodes.py`, `ast_printer.py`, AST documentation.
+6. Member 6 :  Presentation slides and supporting documentation.
 
 *The table describes the planned division of work. Update it to reflect the actual contributions and files created or modified by each member.*
 
