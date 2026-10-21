@@ -1,33 +1,34 @@
 
-CONTEXT-FREE GRAMMAR (CFG)
-==========================
+MATHEMATICAL FORMULA COMPILER
+CONTEXT-FREE GRAMMAR
+====================
+
+1. ORIGINAL GRAMMAR
 
 E -> E + T | E - T | T
-T -> T * P | T / P | P
-P -> P ^ U | U
-U -> +U | -U | A
+T -> T * U | T / U | U
+U -> + U | - U | P
+P -> A ^ U | A
 A -> ID | NUMBER | (E) | sqrt(E) | pow(E,E)
 
 
-GRAMMAR AFTER ELIMINATING LEFT RECURSION
-========================================
+2. GRAMMAR AFTER ELIMINATING LEFT RECURSION
 
 E  -> T E'
 E' -> + T E' | - T E' | epsilon
 
-T  -> P T'
-T' -> * P T' | / P T' | epsilon
+T  -> U T'
+T' -> * U T' | / U T' | epsilon
 
-P  -> U P'
-P' -> ^ P | epsilon
+U  -> + U | - U | P
 
-U  -> + U | - U | A
+P  -> A P'
+P' -> ^ U | epsilon
 
 A  -> ID | NUMBER | (E) | sqrt(E) | pow(E,E)
 
 
-TERMINAL SYMBOLS
-================
+3. TERMINAL SYMBOLS
 
 ID      : Variable name
 NUMBER  : Numeric constant
