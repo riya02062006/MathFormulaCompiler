@@ -1,40 +1,100 @@
+# MathFormulaCompiler
 
-# Mathematical Formula Compiler Front End
+A Python-based mini compiler that validates mathematical formulas using lexical analysis, syntax analysis, Abstract Syntax Tree (AST) generation, and semantic analysis.
 
 ## 1. Project Overview
 
-This project implements a compiler front end that validates mathematical formulas containing variables, numeric constants, arithmetic operators, exponentiation, parentheses, and built-in functions such as `sqrt()` and `pow()`.
+The Mathematical Formula Compiler is designed to validate mathematical expressions involving variables, constants, arithmetic operators, exponentiation, parentheses, and built-in functions such as `sqrt()` and `pow()`.
 
-The compiler checks the lexical structure and syntax of formulas, constructs an Abstract Syntax Tree (AST), and performs basic semantic validation.
+The project demonstrates the fundamental phases of compiler design through a simple Python implementation.
 
-## 2. Objectives
+## 2. Features
 
-- Recognize tokens in mathematical formulas.
-- Validate formulas using a parser.
-- Construct and display an Abstract Syntax Tree.
-- Check semantic errors such as division by zero.
-- Validate supported built-in functions.
-- Display meaningful error messages for invalid formulas.
+- Lexical analysis and token generation
+- Syntax analysis using recursive-descent parsing
+- Support for arithmetic operators and exponentiation
+- Support for unary operators and parentheses
+- Support for `sqrt()` and `pow()` functions
+- Abstract Syntax Tree generation and printing
+- Selected semantic error detection
+- Error reporting for invalid formulas
 
-## 3. Features
-
-- Variables and numeric constants
-- Addition, subtraction, multiplication, and division
-- Exponentiation using `^`
-- Unary plus and minus
-- Parentheses
-- Built-in functions: `sqrt()` and `pow()`
-- Syntax error detection
-- Semantic error detection
-- AST generation and display
-
-## 4. Technologies Used
+## 3. Requirements
 
 - Python 3
-- Visual Studio Code
-- Git and GitHub
+- Git
+- GitHub account
+- Visual Studio Code or another Python editor
 
-## 5. Project Structure
+No external Python packages are required for the current implementation.
+
+## 4. How to Run
+
+Clone the repository:
+
+```bash
+git clone https://github.com/riya02062006/MathFormulaCompiler.git
+```
+
+Navigate to the project directory:
+
+```bash
+cd MathFormulaCompiler
+```
+
+Run the compiler:
+
+```bash
+py main.py
+```
+
+Alternatively, use `python main.py` if that is the Python command configured on your computer.
+
+## 5. Compiler Phases
+
+### Lexical Analysis
+
+The lexical analyzer identifies tokens such as variables, numbers, arithmetic operators, parentheses, and mathematical functions. It reports invalid characters.
+
+### Syntax Analysis
+
+The parser checks whether the input formula follows the defined grammar and handles operator precedence and associativity.
+
+### Abstract Syntax Tree
+
+The AST represents the structure of a parsed mathematical formula using different node types. The AST printer displays the tree in a readable format.
+
+### Semantic Analysis
+
+The semantic analyzer checks selected conditions, including division by a numeric constant equal to zero, directly represented negative constants passed to `sqrt()`, and the expected number of function arguments.
+
+## 6. Grammar and Transformations
+
+The file `grammar.txt` contains the context-free grammar for mathematical formulas and the grammar after eliminating immediate left recursion from the expression and term productions.
+
+It describes the grammar rules for arithmetic expressions, variables, numeric constants, exponentiation, parentheses, and built-in functions.
+
+## 7. Testing
+
+The `tests/` directory contains sample valid and invalid formulas.
+
+Examples of valid formulas:
+
+- `x + 5`
+- `sqrt(x^2 + 25)`
+- `pow(x, 2)`
+- `3 * (x + 4)^2`
+- `sqrt(pow(x, 2) + pow(y, 2))`
+
+Examples of invalid formulas:
+
+- `sqrt(-9)` — selected semantic error
+- `x + @` — lexical error
+- `x +` — syntax error
+
+The actual test results depend on the implemented lexer, parser, and semantic checks.
+
+## 8. Project Structure
 
 ```text
 MathFormulaCompiler/
@@ -44,62 +104,94 @@ MathFormulaCompiler/
 ├── ast_nodes.py
 ├── ast_printer.py
 ├── semantic.py
-├── tests/
-│   ├── valid_tests.txt
-│   └── invalid_tests.txt
-└── README.md
+├── grammar.txt
+├── compiler_output.png
+├── README.md
+└── tests/
+    ├── valid_tests.txt
+    └── invalid_tests.txt
 ```
 
-## 6. Compiler Architecture
+## 9. File Documentation
 
-The project follows these stages:
-
-1. **Lexical Analysis:** Converts the input formula into tokens.
-2. **Syntax Analysis:** Checks the grammatical structure and builds an AST.
-3. **Semantic Analysis:** Checks selected semantic errors, including division by zero and square roots of negative numeric constants.
-4. **AST Display:** Displays the tree structure of formulas that pass all checks.
-
-## 7. How to Run
-
-1. Install Python 3.
-2. Download or clone this repository.
-3. Open the project folder in a terminal.
-4. Run:
-
-```bash
-py main.py
-```
-
-The program tests the formulas listed in `main.py` and displays validation results.
-
-## 8. Sample Test Cases
-
-| Formula | Expected outcome |
+| File | Description |
 |---|---|
-| `x + 5` | Valid |
-| `sqrt(x^2 + 25)` | Valid |
-| `pow(x, 2)` | Valid |
-| `pow(x)` | Invalid syntax |
-| `10 / 0` | Semantic error |
-| `sqrt(-9)` | Semantic error |
-| `x + @` | Lexical error |
-| `x +` | Syntax error |
+| `main.py` | Main program that coordinates compiler execution |
+| `lexer.py` | Tokenizes mathematical formulas |
+| `parser.py` | Checks syntax and constructs the AST |
+| `ast_nodes.py` | Defines AST node classes |
+| `ast_printer.py` | Displays the AST structure |
+| `semantic.py` | Performs selected semantic checks |
+| `grammar.txt` | Contains the grammar and grammar transformation |
+| `tests/valid_tests.txt` | Contains valid formula test cases |
+| `tests/invalid_tests.txt` | Contains invalid formula test cases |
+| `compiler_output.png` | Screenshot of the compiler's terminal output |
+| `README.md` | Project overview, instructions, file descriptions, and contribution documentation |
 
-## 9. Limitations
+## 10. Documentation and Project Resources
 
-- The program validates formulas; it does not evaluate their numerical results.
-- Variables are not assigned values or checked against a symbol table.
-- Semantic analysis covers selected errors rather than every possible mathematical domain error.
-- Function argument counts are enforced by the parser.
+The repository includes the following project resources:
 
-## 10. Future Enhancements
+- **README.md:** Project overview, features, requirements, execution instructions, architecture, file descriptions, and contributor responsibilities.
+- **grammar.txt:** Context-free grammar and grammar transformation details.
+- **tests/valid_tests.txt:** Valid formula test cases.
+- **tests/invalid_tests.txt:** Invalid formula test cases.
+- **compiler_output.png:** Screenshot showing compiler execution and output.
+- **Source files:** Implementation of the lexer, parser, AST, AST printer, semantic analyzer, and main program.
 
-- Add variable declarations and symbol-table support.
-- Expand semantic validation.
-- Add a graphical user interface.
-- Generate more detailed parse-tree visualizations.
-- Add automated tests.
+Additional documents, reports, presentation slides, and screenshots can be maintained in dedicated folders as they are created.
 
-## 11. Contributors
+## 11. Team Contributions
 
-Add the names of all project team members and describe each person's contribution here.
+The project is divided among six members. The following table describes the planned responsibilities and the files or resources associated with each contribution.
+
+|  Member  |             Responsibility                 | Files or Resources |
+
+| Member 1 | Project report and technical documentation | `README.md`, project report |
+| Member 2 | Parser integration and semantic validation | `parser.py`, `semantic.py` |
+| Member 3 | Lexical analysis and token specification   | `lexer.py`, token documentation |
+| Member 4 | Testing and output screenshots             | `tests/valid_tests.txt`, `tests/invalid_tests.txt`, `compiler_output.png` |
+| Member 5 | Parse tree and Abstract Syntax Tree        | `ast_nodes.py`, `ast_printer.py`, AST documentation |
+| Member 6 | Presentation and project explanation       | Presentation slides and supporting documentation |
+
+*The table describes the planned division of work. Update it to reflect the actual contributions and files created or modified by each member.*
+
+## 12. GitHub Collaboration
+
+Each member should contribute to the shared repository through their own GitHub account.
+
+The contribution workflow includes:
+
+1. Working on the assigned source file or documentation.
+2. Testing the changes where applicable.
+3. Committing the changes with a meaningful commit message.
+4. Pushing the contribution to GitHub.
+5. Reviewing the final changes before merging.
+
+Contributions should represent actual work performed by each member.
+
+## 13. Limitations
+
+- The compiler does not evaluate every expression to a numerical result.
+- Variables are not resolved using a symbol table.
+- Semantic checks cover only selected mathematical conditions.
+- Error recovery is limited.
+- The project is intended for educational purposes.
+
+## 14. Future Enhancements
+
+- Mathematical expression evaluation
+- Symbol-table implementation
+- Expanded semantic analysis
+- Improved error messages
+- Automated testing
+- Graphical user interface
+- Enhanced AST visualization
+
+## 15. Conclusion
+
+The Mathematical Formula Compiler demonstrates important compiler-design concepts, including lexical analysis, syntax analysis, grammar transformations, AST generation, and semantic validation. The modular implementation provides a foundation for further development and improvement.
+
+## Repository
+
+GitHub: https://github.com/riya02062006/MathFormulaCompiler
