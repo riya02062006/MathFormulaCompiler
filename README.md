@@ -123,15 +123,25 @@ MathFormulaCompiler/
 
 
  1.`main.py` :  Main program for running and testing the compiler.
+ 
  2.`gui.py` : Graphical user interface for entering and validating mathematical formulas.
+ 
  3.`lexer.py` : Performs lexical analysis and generates tokens.
+ 
  4.`parser.py` : Performs syntax analysis and constructs the Abstract Syntax Tree.
+ 
  5.`ast_nodes.py` : Defines the different AST node classes.
+ 
  6.`ast_printer.py` : Displays the Abstract Syntax Tree in a readable format.
+ 
  7.`semantic.py` : Performs semantic validation and detects selected mathematical errors.
+ 
  8.`grammar.txt` : Contains the context-free grammar and grammar transformations.
+ 
  9.`tests/` : Contains valid and invalid mathematical formula test cases.
+ 
  10.`screenshots/` : Contains screenshots of compiler and GUI execution.
+ 
  11.`README.md` : Contains project information, instructions, documentation, and contribution details.
 
 
@@ -141,8 +151,8 @@ The repository includes the following project resources:
 
 - **README.md:** Project overview, features, requirements, execution instructions, architecture, file descriptions, and contributor responsibilities.
 - **grammar.txt:** Context-free grammar and grammar transformation details.
-- **tests/valid_tests.txt:** Valid formula test cases.
-- **tests/invalid_tests.txt:** Invalid formula test cases.
+- **test/valid_tests.txt:** Valid formula test cases.
+- **test/invalid_tests.txt:** Invalid formula test cases.
 - **compiler_output.png:** Screenshot showing compiler execution and output.
 - **Source files:** Implementation of the lexer, parser, AST, AST printer, semantic analyzer, and main program.
 
