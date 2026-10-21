@@ -97,6 +97,9 @@ The actual test results depend on the implemented lexer, parser, and semantic ch
 ## 8. Project Structure
 
 ```text
+## Project Structure
+
+```text
 MathFormulaCompiler/
 ├── main.py
 ├── lexer.py
@@ -105,11 +108,17 @@ MathFormulaCompiler/
 ├── ast_printer.py
 ├── semantic.py
 ├── grammar.txt
-├── compiler_output.png
 ├── README.md
-└── tests/
-    ├── valid_tests.txt
-    └── invalid_tests.txt
+├── test/
+│   ├── valid_tests.txt
+│   └── invalid_tests.txt
+└── Screenshots/
+    ├── output_1.png
+    ├── output_2.png
+    ├── output_3.png
+    └── output_4.png
+```
+
 ```
 
 ## 9. File Documentation
