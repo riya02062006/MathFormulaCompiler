@@ -95,13 +95,12 @@ Examples of invalid formulas:
 The actual test results depend on the implemented lexer, parser, and semantic checks.
 
 ## 8. Project Structure
-
-```text
 ## Project Structure
 
 ```text
 MathFormulaCompiler/
 ├── main.py
+├── gui.py
 ├── lexer.py
 ├── parser.py
 ├── ast_nodes.py
@@ -109,33 +108,34 @@ MathFormulaCompiler/
 ├── semantic.py
 ├── grammar.txt
 ├── README.md
-├── test/
+├── tests/
 │   ├── valid_tests.txt
 │   └── invalid_tests.txt
-└── Screenshots/
+└── screenshots/
     ├── output_1.png
     ├── output_2.png
     ├── output_3.png
     └── output_4.png
 ```
 
-```
+### File Descriptions
 
-## 9. File Documentation
 
-| File | Description |
-|---|---|
-| `main.py` | Main program that coordinates compiler execution |
-| `lexer.py` | Tokenizes mathematical formulas |
-| `parser.py` | Checks syntax and constructs the AST |
-| `ast_nodes.py` | Defines AST node classes |
-| `ast_printer.py` | Displays the AST structure |
-| `semantic.py` | Performs selected semantic checks |
-| `grammar.txt` | Contains the grammar and grammar transformation |
-| `tests/valid_tests.txt` | Contains valid formula test cases |
-| `tests/invalid_tests.txt` | Contains invalid formula test cases |
-| `compiler_output.png` | Screenshot of the compiler's terminal output |
-| `README.md` | Project overview, instructions, file descriptions, and contribution documentation |
+
+ 1.`main.py` :  Main program for running and testing the compiler |
+ 2.`gui.py` : Graphical user interface for entering and validating mathematical formulas |
+ 3.`lexer.py` : Performs lexical analysis and generates tokens |
+ 4.`parser.py` : Performs syntax analysis and constructs the Abstract Syntax Tree |
+ 5.`ast_nodes.py` : Defines the different AST node classes |
+ 6.`ast_printer.py` : Displays the Abstract Syntax Tree in a readable format |
+ 7.`semantic.py` : Performs semantic validation and detects selected mathematical errors |
+ 8.`grammar.txt` : Contains the context-free grammar and grammar transformations |
+ 9.`tests/` : Contains valid and invalid mathematical formula test cases |
+ 10.`screenshots/` : Contains screenshots of compiler and GUI execution |
+ 11.`README.md` : Contains project information, instructions, documentation, and contribution details |
+
+
+
 
 ## 10. Documentation and Project Resources
 
