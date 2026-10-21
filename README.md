@@ -191,6 +191,4 @@ Contributions should represent actual work performed by each member.
 
 The Mathematical Formula Compiler demonstrates important compiler-design concepts, including lexical analysis, syntax analysis, grammar transformations, AST generation, and semantic validation. The modular implementation provides a foundation for further development and improvement.
 
-## Repository
 
-GitHub: https://github.com/riya02062006/MathFormulaCompiler
