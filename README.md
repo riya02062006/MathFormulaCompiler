@@ -2,6 +2,9 @@
 
 A Python-based mini compiler that validates mathematical formulas using lexical analysis, syntax analysis, Abstract Syntax Tree (AST) generation, and semantic analysis.
 
+# DEMO LINK
+ https://mathformulacompiler-k8aenwrusvgh9supem8sg2.streamlit.app/
+
 ## 1. Project Overview
 
 The Mathematical Formula Compiler is designed to validate mathematical expressions involving variables, constants, arithmetic operators, exponentiation, parentheses, and built-in functions such as `sqrt()` and `pow()`.
